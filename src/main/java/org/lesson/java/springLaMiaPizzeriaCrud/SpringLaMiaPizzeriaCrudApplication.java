@@ -19,7 +19,7 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Pizze pizza1 = new Pizze("Margherita", "La pizza Margherita è una pizza classica italiana che è composta da una base di pasta, salsa di pomodoro, mozzarella e basilico. ", "https://media.istockphoto.com/id/157741539/it/foto/pizza-margherita.jpg?s=1024x1024&w=is&k=20&c=yty0Yfn1-_VHi9DmBzojp2rbjaHYtfrTjobhrPTsQKg=", 4.99f);
+		Pizze pizza1 = new Pizze("Margherita", "La pizza Margherita è una pizza classica italiana che è composta da una base di pasta, salsa di pomodoro, mozzarella e basilico. ", "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg", 4.99f);
 
 		Pizze pizza2 = new Pizze("Diavola", "Pizza dal sapore intenso e piccante, con un contrasto tra la dolcezza della salsa di pomodoro e la sapidità del salamino piccante. La mozzarella filante completa il piatto, rendendolo ancora più gustoso.", "https://plus.unsplash.com/premium_photo-1668771085743-1d2d19818140?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80", 9.50f);
 
