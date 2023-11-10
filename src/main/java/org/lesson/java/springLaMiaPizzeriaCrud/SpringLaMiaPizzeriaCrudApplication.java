@@ -29,12 +29,33 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner {
 
 		Pizze pizza5 = new Pizze("Speck&Brie", "Un sapore ricco e saporito, con un contrasto tra il sapore sapido dello speck e il sapore dolce e cremoso del brie.", "https://shop.aostapizzapazza.it/utenti/mancuso_it/cache/_pics/2/8/pizza-affumicata-1_9bfd18c14668eda8afb51dbee2ec85f5_t.jpg", 12.00f);
 
+		Pizze pizza6 = new Pizze("Prosciutto e Funghi", "Un'accoppiata classica di prosciutto cotto e funghi freschi su una base di pomodoro e mozzarella.", "https://i1.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2019/10/4102_Pizza.jpg", 12.00f);
+
+		Pizze pizza7 = new Pizze("Quattro Formaggi", "Una sinfonia di formaggi con mozzarella, gorgonzola, parmigiano e taleggio su una crosta croccante.", "https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2017/06/3234_Pizza.jpg", 11.00f);
+
+		Pizze pizza8 = new Pizze("Tonno e Cipolla", "Un mix equilibrato di sapori con pomodoro, mozzarella, tonno e cipolla dolce.", "https://www.bofrost.it/on/demandware.static/-/Sites-IT-master-catalog/default/dw8eb928da/images/15196-Pizza-Tonno-e-Cipolla-R.jpg", 9.00f);
+
+		Pizze pizza9 = new Pizze("Pizza alla Carbonara", "Ispirata alla celebre pasta, con uova fresche, pancetta croccante, pecorino e una generosa macinata di pepe nero.", "https://blog.giallozafferano.it/adryincucina/wp-content/uploads/2021/02/pizza-carbonara-2-683x1024.jpg", 12.00f);
+
+		Pizze pizza10 = new Pizze("Pizza ai Frutti di Mare", "Un viaggio nei sapori del mare con gamberetti succulenti, cozze, vongole e calamari su una base di pomodoro o bianca.", "https://www.unmondodisapori.it/wp-content/uploads/2017/10/pizza-frutti-di-mare.jpg", 12.00f);
+
+		Pizze pizza11 = new Pizze("Marinara", "Un'esperienza tradizionale con la semplicità del pomodoro, aglio aromatico, origano fresco e l'olio d'oliva, tutto su una crosta sottile.", "https://www.melarossa.it/wp-content/uploads/2022/05/pizza-marinara.jpg", 12.00f);
+
+		Pizze pizza12 = new Pizze("Pizza con Patate e Rosmarino", "Un connubio unico di sapori con mozzarella, patate sottili, rosmarino aromatico, sale e olio d'oliva.", "https://blog.giallozafferano.it/pietrozanella/wp-content/uploads/2016/01/IMG_0726.jpg", 9.00f);
+
 
 		pizzaService.save(pizza1);
 		pizzaService.save(pizza2);
 		pizzaService.save(pizza3);
 		pizzaService.save(pizza4);
 		pizzaService.save(pizza5);
+		pizzaService.save(pizza6);
+		pizzaService.save(pizza7);
+		pizzaService.save(pizza8);
+		pizzaService.save(pizza9);
+		pizzaService.save(pizza10);
+		pizzaService.save(pizza11);
+		pizzaService.save(pizza12);
 
 		System.out.println("!!--------!! Seeded the db with success !!--------!!");
 	}

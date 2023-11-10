@@ -9,21 +9,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PizzaController {
     @Autowired
     private PizzaService pizzaService;
 
-    @GetMapping("/test")
-    public String test(Model model) {
-        return "index";
-    }
-
     @GetMapping("/")
-    public String showIndex(Model model) {
+    public String showIndex(Model model, @RequestParam(required = false) String name) {
 
-        List<Pizze> pizzas = pizzaService.findAll();
+        List<Pizze> pizzas = name == null
+                ? pizzaService.findAll()
+                : pizzaService.findByName(name);
         model.addAttribute("pizzas", pizzas);
 
         return "index";

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="frags :: head('Pizza details')">
+<head th:replace="frags :: head('Pizza')">
 
 </head>
 
-<body th:object="${pizza}" class="bg-light">
+<body th:object="${pizza}" class="bg-secondary">
 <div class="container my-5">
+    <div class="banner" style="height: 300px; text-align: center; overflow: hidden; position: relative;">
+        <!-- Inserisci l'immagine nel banner -->
+        <img src="/photo/_63929591-66ff-4d65-8f9a-08da0132b5c4.jpg" alt="Banner Image" style="width: 100%; height: 100%; object-fit: cover; object-position: bottom">
+    </div>
     <div class="row mb-4 d-flex align-items-center justify-content-between">
         <div class="col">
             <h1>[[${pizza.name}]]</h1>
         </div>
         <div class="col d-flex justify-content-end">
-            <a href="/" type="button" class="btn btn-outline-dark rounded-0">Menù</a>
+            <a href="/" type="button" class="btn btn-outline-dark rounded-0 bg-success">Menù</a>
         </div>
     </div>
     <div class="row">
