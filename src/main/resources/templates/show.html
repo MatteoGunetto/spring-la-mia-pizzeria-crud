@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<div th:replace="index :: head"></div>
+<head th:replace="frags :: head('Pizza details')">
 
-<body th:object="${pizza}">
+</head>
+
+<body th:object="${pizza}" class="bg-light">
 <div class="container my-5">
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="/photo/_5e7337f1-5b79-43fd-b338-ec962d2550e4.jpg" height="50" width="50" class="d-inline-block ">
-                Le Nostre pizze
-            </a>
+    <div class="row mb-4 d-flex align-items-center justify-content-between">
+        <div class="col">
+            <h1>[[${pizza.name}]]</h1>
         </div>
-    </nav>
+        <div class="col d-flex justify-content-end">
+            <a href="/" type="button" class="btn btn-outline-dark rounded-0">Menù</a>
+        </div>
+    </div>
     <div class="row">
-        <img src="/photo/_63929591-66ff-4d65-8f9a-08da0132b5c4.jpg" height="600" width="600"/>
-        <div class="col mt-5">
-            <div class="card text-start rounded-0 border-0 shadow">
-                <img class="card-img-top object-fit-cover rounded-0" height="350" th:src="${pizza.picture}">
-                <div class="card-body">
-                    <h4 class="card-title">[[${pizza.name}]]</h4>
-                    <p class="card-text">[[${pizza.description}]]</p>
-                    <small class="card-footer">[[${pizza.price}]]</small>
-
-                </div>
+        <div class="col d-flex justify-content-between align-items-start">
+            <div
+                    class="h-100 w-100 p-5 shadow bg-white d-flex flex-column justify-content-start align-items-start gap-3">
+                <p class="">[[${pizza.description}]]</p>
+                <small class="align-self-end">Prezzo: <span class="fs-3">[[${pizza.price}]]</span>€</small>
             </div>
+            <img class="object-fit-cover rounded-0 shadow" height="400" width="400" th:src="${pizza.picture}">
         </div>
     </div>
 </div>
 </body>
-
 </html>
