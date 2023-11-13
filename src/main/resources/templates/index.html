@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="frags :: head('Homepage')"></head>
+<head th:replace="~{frags :: head('Menù')}"></head>
 
 <body class="bg-secondary">
 <div class="container my-5">
@@ -19,7 +19,7 @@
     </div>
     <div class="row flex-column flex-md-row mb-4">
         <div class="col">
-            <h2><a href="/" class="text-decoration-none text-dark">Menù</a></h2>
+            <a href="/create" type="button" class="btn btn-outline-dark rounded-0 bg-warning my-2">Create a new pizza</a>
         </div>
         <div class="col">
             <form class="d-flex align-items-center my-2">
@@ -27,6 +27,7 @@
                        placeholder="Cerca la tua pizza!">
                 <button type="submit" class="btn btn-outline-dark rounded-0 bg-success">Search</button>
             </form>
+
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">

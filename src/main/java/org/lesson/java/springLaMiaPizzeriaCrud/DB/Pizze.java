@@ -1,7 +1,13 @@
 package org.lesson.java.springLaMiaPizzeriaCrud.DB;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 @Entity
 public class Pizze {
 
@@ -9,11 +15,17 @@ public class Pizze {
     @GeneratedValue(strategy  = GenerationType.IDENTITY)
     private int id;
 
-    @Column(length = 128, nullable=false)
+
+    @NotBlank(message="Non può essere vuoto")
     private String name;
 
+    @NotBlank(message="Non può essere vuoto")
     private String description;
+
+    @NotEmpty(message="Non può essere vuoto")
     private String picture;
+
+    @Positive(message="deve essere positivo")
     private float price;
 
     public Pizze() {}
@@ -64,13 +76,4 @@ public class Pizze {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-
-        return "[" + getId() + "] Pizza:\n"
-                + "name: " + getName() + "\n"
-                + "description: " + getDescription() + "\n"
-                + "picture_url: " + getPicture() + "\n"
-                + "price: " + getPrice();
-    }
 }
