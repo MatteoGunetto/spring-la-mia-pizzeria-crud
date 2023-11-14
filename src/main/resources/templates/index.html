@@ -19,26 +19,38 @@
     </div>
     <div class="row flex-column flex-md-row mb-4">
         <div class="col">
-            <a href="/create" type="button" class="btn btn-outline-dark rounded-0 bg-warning my-2">Create a new pizza</a>
+            <a href="/create" type="button" class="btn btn-outline-dark rounded-0 bg-warning my-2">Crea nuova pizza</a>
         </div>
         <div class="col">
             <form class="d-flex align-items-center my-2">
                 <input type="text" class="form-control rounded-0" name="name" id="name" aria-describedby="helpId"
                        placeholder="Cerca la tua pizza!">
-                <button type="submit" class="btn btn-outline-dark rounded-0 bg-success">Search</button>
+                <button type="submit" class="btn btn-outline-dark rounded-0 bg-success">Ricerca</button>
             </form>
 
         </div>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
         <div class="col" th:each="pizza : ${pizzas}" th:object="${pizza}">
-            <a th:href="@{/{id}(id=${pizza.getId()})}"
-               class="h-100 card text-start text-decoration-none rounded-0 border-0 shadow">
+            <div class="h-100 card text-start text-decoration-none rounded-0 border-0 shadow product_card">
                 <img class="card-img-top rounded-0 object-fit-cover" height="250" th:src="${pizza.picture}">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <h4 class="card-title">[[${pizza.name}]]</h4>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <small
+                                class="card-footer bg-transparent border border-dark rounded-0">[[${pizza.price}]]€</small>
+                        <div class="d-flex align-items-center justify-content-end gap-2">
+                            <a type="button" class="btn btn-outline-dark rounded-0 bg-primary"
+                               th:href="@{/{id}(id=${pizza.getId()})}">Dettagli</a>
+                            <a type="button" th:href="@{/update/{id}(id=${pizza.getId()})}"
+                               class="btn btn-outline-dark rounded-0 bg-warning">Modifica</a>
+                            <form th:action="@{/delete/{id}(id=*{id})}" method="post">
+                                <button type="submit" class="btn btn-outline-dark rounded-0 bg-danger">Eimina</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </div>
